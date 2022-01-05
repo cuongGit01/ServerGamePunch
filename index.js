@@ -16,6 +16,6 @@ io.sockets.on('connection', (socket) => {
         console.log('user disconnected');
     });
 });
-http.listen(3000, () => {
+http.listen(process.env.PORT || 3000, () => {
     console.log('Connected at 3000');
 });
