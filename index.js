@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 io.sockets.on('connection', (socket) => {
     console.log('a user connected');
     socket.on("chat", function(msg) {
-        console.log('message f  rom user#' + socket.userId + ": " + msg);
+        console.log('message f  rom user#' + socket.userId + ":" + msg);
     });
     // io.emit('chat', "server result");
     socket.on('disconnect', () => {
