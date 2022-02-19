@@ -58,12 +58,11 @@
     $(function() {
         var socket = io();
         $('form').submit(function() {
-            socket.emit('chat', $('#m').val());
-            $('#m').val('');
+            socket.emit('updatePosition', "1|2");
             return false;
         });
-        socket.on('chat', function(data) {
-            $('#messages').append($('<li>').text("user#" + data.id + ": " + data.msg));
+        socket.on('updatePosition', function(data) {
+            $('#messages').append($('<li>').text(data));
         });
     });
 </script>
